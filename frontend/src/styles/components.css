@@ -1,0 +1,26 @@
+.navbar {
+  background: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.stats-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stats-title {
+  color: #888;
+  font-size: 14px;
+}
+
+.stats-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}

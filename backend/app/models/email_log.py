@@ -1,5 +1,7 @@
-from sqlalchemy import Column, Integer, String, Boolean
-from database import Base
+# app/models/email_log.py
+from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from datetime import datetime
+from app.database import Base
 
 class EmailLog(Base):
     __tablename__ = "email_logs"
@@ -8,3 +10,4 @@ class EmailLog(Base):
     email_id = Column(String)
     subject = Column(String)
     is_replied = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
