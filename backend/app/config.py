@@ -1,7 +1,8 @@
 import os
 
-GEMINI_API_KEY = "AIzaSyBxM_vBuxNDKRluKnDEpg0MLdlng6_pjpA"
+GEMINI_API_KEY = "AIzaSyAjBzyjGSB46Ht53vbxsesLYm7OGRfbuj0"
 
+DATABASE_URL = "postgresql://postgres:ifath%40456@localhost:5432/email_replier_db"
 DATABASE_URL = "postgresql://postgres:ifath%40456@localhost:5432/email_replier_db"
 
 # Embedding / FAISS files

@@ -1,4 +1,3 @@
-# app/routes/email_stats_routes.py
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
@@ -6,6 +5,7 @@ from app.database import get_db
 from app.models.email_log import EmailLog
 
 router = APIRouter(prefix="/emails", tags=["Email Stats"])
+
 
 @router.get("/stats")
 def get_stats(filter: str = "today", db: Session = Depends(get_db)):
@@ -23,8 +23,8 @@ def get_stats(filter: str = "today", db: Session = Depends(get_db)):
     logs = db.query(EmailLog).filter(EmailLog.created_at >= start).all()
 
     total = len(logs)
-    inquiries = len([l for l in logs if l.subject.lower().startswith("inquiry")])
-    complaints = len([l for l in logs if l.subject.lower().startswith("complaint")])
+    inquiries = len([l for l in logs if l.is_inquiry])
+    complaints = len([l for l in logs if l.is_complaint])
     replied = len([l for l in logs if l.is_replied])
 
     return {
