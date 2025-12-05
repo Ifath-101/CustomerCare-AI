@@ -119,7 +119,7 @@ Instructions:
                             "reply_text": ""        # no reply for complaints
                         }
                     
-                    if confidence < 0.5:
+                    if confidence < 0.30:
                         return {
                             "is_inquiry": False,
                             "reason": f"Low confidence ({confidence:.2f})",

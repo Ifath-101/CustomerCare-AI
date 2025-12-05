@@ -9,7 +9,7 @@ def generate_reply(to_email, subject, body, confidence,
 
     print("\n----- DEBUG: generate_reply() STARTED -----")
 
-    if confidence <= 0.50:
+    if confidence <= 0.30:
         print(f"DEBUG: Confidence {confidence} too low, skipping reply.")
         return None
 

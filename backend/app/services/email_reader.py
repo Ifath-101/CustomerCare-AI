@@ -1,10 +1,11 @@
+# email_reader.py
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 import base64
 import email
 from email import policy
-from bs4 import BeautifulSoup
 import re
+from bs4 import BeautifulSoup   # make sure you already have this installed
 
 
 def get_gmail_service():
@@ -12,8 +13,22 @@ def get_gmail_service():
     return build("gmail", "v1", credentials=creds)
 
 
+# >>> NEW FUNCTION <<< #
+def get_unread_email_count():
+    """
+    Get total unread Gmail count (NO PROCESSING)
+    """
+    service = get_gmail_service()
+    results = service.users().messages().list(
+        userId="me",
+        labelIds=["UNREAD"]
+    ).execute()
+
+    messages = results.get("messages", [])
+    return len(messages)
+
+
 def extract_clean_text(parsed_email):
-    """Extract usable text from multipart or HTML emails."""
     if parsed_email.is_multipart():
         for part in parsed_email.walk():
             content_type = part.get_content_type()
@@ -39,22 +54,15 @@ def extract_clean_text(parsed_email):
                 return BeautifulSoup(decoded, "html.parser").get_text(separator="\n").strip()
 
             return decoded.strip()
+
     return ""
 
 
 def clean_email_body(text: str):
-    """Removes quoted replies + signatures + forwarded blocks."""
     print("DEBUG: Cleaning email body...")
-
-    # Remove "On Mon, XXX wrote:"
     text = re.split(r"On\s.*wrote:", text)[0]
-
-    # Remove multiple empty lines
     text = re.sub(r"\n\s*\n\s*\n+", "\n\n", text)
-
-    # Remove typical signatures
     text = re.sub(r"(?i)(thanks|regards|best regards|sent from my).*", "", text).strip()
-
     print("DEBUG: Cleaned customer message:", text[:200], "...")
     return text
 
@@ -98,7 +106,7 @@ def read_latest_unread_email():
         "id": latest_id,
         "from": parsed["From"],
         "subject": parsed["Subject"],
-        "body": cleaned_body   # 👈 Use cleaned message now
+        "body": cleaned_body
     }
 
     print("DEBUG: Final parsed + cleaned email:", result)
