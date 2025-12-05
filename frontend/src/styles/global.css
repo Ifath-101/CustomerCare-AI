@@ -1,12 +1,79 @@
-body {
+/* ==================== RESET & BASE STYLES ==================== */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f6fa;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* ==================== CONTAINER ==================== */
 .container {
   width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  padding-top: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+button {
+  font-family: inherit;
+}
+
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==================== RESPONSIVE UTILITIES ==================== */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }

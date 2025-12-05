@@ -1,26 +1,200 @@
+/* ==================== NAVBAR ==================== */
 .navbar {
-  background: #fff;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.brand-icon svg {
+  stroke: white;
+}
+
+.brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brand-text p {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  color: #111827;
+  background: #f3f4f6;
+}
+
+/* ==================== STATS CARD ==================== */
 .stats-card {
   background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.stats-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.stats-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.stats-icon svg {
+  stroke: white;
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.cyan-gradient {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.red-gradient {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.green-gradient {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.purple-gradient {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.stats-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stats-trend.positive {
+  color: #10b981;
+}
+
+.stats-trend.negative {
+  color: #ef4444;
+}
+
+.stats-trend svg {
+  stroke: currentColor;
+}
+
+.stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .stats-title {
-  color: #888;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
 }
 
 .stats-value {
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .brand-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .brand-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.125rem;
+  }
+
+  .brand-text p {
+    font-size: 0.7rem;
+  }
+
+  .stats-value {
+    font-size: 1.75rem;
+  }
+
+  .logout-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
 }

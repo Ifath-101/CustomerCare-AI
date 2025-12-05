@@ -1,31 +1,124 @@
+/* ==================== LOGIN PAGE ==================== */
 .login-wrapper {
-  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff6ff, #e0e7ff, #ede9fe);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* NEW MAIN HEADING */
+.brand-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .login-box {
   background: white;
-  padding: 40px;
-  border-radius: 8px;
-  width: 350px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 28rem;
   text-align: center;
 }
 
-.login-btn {
-  margin-top: 20px;
-  background: #4c8bf5;
+.login-icon {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
   color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+}
+
+.login-icon svg {
+  stroke: white;
+}
+
+.login-box h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.login-box > p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.login-btn {
   width: 100%;
-  font-size: 16px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s;
+  font-size: 1rem;
 }
 
 .login-btn:hover {
-  background: #3a73d9;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.google-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.login-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 1rem;
+  }
+
+  .brand-title {
+    font-size: 2rem;
+  }
+
+  .login-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-btn {
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
 }
