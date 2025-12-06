@@ -4,7 +4,7 @@ import API from "../api/api";
 export default function Login() {
 
   const handleLogin = async () => {
-    window.location.href = "http://localhost:8000/auth/google-login";
+    window.location.href = "http://localhost:8000/auth/login";
   };
 
   return (
