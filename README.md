@@ -9,7 +9,7 @@ Complaint emails are forwarded to the complaint-handling team, while low-confide
 This system includes:
 - A complete **web dashboard**
 - **LLM-powered email intelligence**
-- **Semantic product search**
+- **Semantic product search from database**
 - **Google OAuth login**
 - **Confidence-controlled automatic replies**
 
@@ -111,5 +111,6 @@ The dashboard shows:
 - Smart decision-making using AI confidence scores  
 
 ---
+
 
 
